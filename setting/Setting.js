@@ -25,7 +25,7 @@ define(["dojo/_base/declare",
 
     return declare([BaseWidgetSetting, _WidgetsInTemplateMixin], {
 
-      baseClass: "jimu-widget-add-data-setting",
+      baseClass: "jimu-widget-add-web-data-setting",
 
       postCreate: function() {
         this.inherited(arguments);
@@ -64,10 +64,33 @@ define(["dojo/_base/declare",
             }
           }
         };
+
+        // Get the ArcGIS Group ID and tags
+        this.config.ArcGISGroupID1 = this.ArcGISGroupIDTextBox1.get('value');
+        this.config.ArcGISGroupID2 = this.ArcGISGroupIDTextBox2.get('value');
+        this.config.ArcGISGroupID3 = this.ArcGISGroupIDTextBox3.get('value');
+        this.config.ArcGISGroupID4 = this.ArcGISGroupIDTextBox4.get('value');
+        this.config.ArcGISGroupID5 = this.ArcGISGroupIDTextBox5.get('value');
+        this.config.ArcGISGroupID6 = this.ArcGISGroupIDTextBox6.get('value');
+        this.config.ArcGISGroupTags1 = this.ArcGISGroupTagsTextBox1.get('value');
+        this.config.ArcGISGroupTags2 = this.ArcGISGroupTagsTextBox2.get('value');
+        this.config.ArcGISGroupTags3 = this.ArcGISGroupTagsTextBox3.get('value');
+        this.config.ArcGISGroupTags4 = this.ArcGISGroupTagsTextBox4.get('value');
+        this.config.ArcGISGroupTags5 = this.ArcGISGroupTagsTextBox5.get('value');
+        this.config.ArcGISGroupTags6 = this.ArcGISGroupTagsTextBox6.get('value');
+
         setOption("MyContent", this.MyContentCheckBox, this.MyContentTextBox);
+        setOption("ArcGISGroup1", this.ArcGISGroupCheckBox1, this.ArcGISGroupTextBox1);
+        setOption("ArcGISGroup2", this.ArcGISGroupCheckBox2, this.ArcGISGroupTextBox2);
+        setOption("ArcGISGroup3", this.ArcGISGroupCheckBox3, this.ArcGISGroupTextBox3);
+        setOption("ArcGISGroup4", this.ArcGISGroupCheckBox4, this.ArcGISGroupTextBox4);
+        setOption("ArcGISGroup5", this.ArcGISGroupCheckBox5, this.ArcGISGroupTextBox5);
+        setOption("ArcGISGroup6", this.ArcGISGroupCheckBox6, this.ArcGISGroupTextBox6);
         setOption("MyOrganization", this.MyOrganizationCheckBox, this.MyOrganizationTextBox);
         setOption("ArcGISOnline", this.ArcGISOnlineCheckBox, this.ArcGISOnlineTextBox);
-        // setOption("FromUrl", this.FromUrlCheckBox);
+
+        // Set default selection config
+        this.config.defaultOption = this.defaultDropdownSelect.value;
 
         return this.config;
       },
@@ -114,11 +137,44 @@ define(["dojo/_base/declare",
             }
           }
         };
+
+        // Set the ArcGIS Group ID and tags
+        this.ArcGISGroupIDTextBox1.set('value', config.ArcGISGroupID1);
+        this.ArcGISGroupIDTextBox2.set('value', config.ArcGISGroupID2);
+        this.ArcGISGroupIDTextBox3.set('value', config.ArcGISGroupID3);
+        this.ArcGISGroupIDTextBox4.set('value', config.ArcGISGroupID4);
+        this.ArcGISGroupIDTextBox5.set('value', config.ArcGISGroupID5);
+        this.ArcGISGroupIDTextBox6.set('value', config.ArcGISGroupID6);
+        this.ArcGISGroupTagsTextBox1.set('value', config.ArcGISGroupTags1);
+        this.ArcGISGroupTagsTextBox2.set('value', config.ArcGISGroupTags2);
+        this.ArcGISGroupTagsTextBox3.set('value', config.ArcGISGroupTags3);
+        this.ArcGISGroupTagsTextBox4.set('value', config.ArcGISGroupTags4);
+        this.ArcGISGroupTagsTextBox5.set('value', config.ArcGISGroupTags5);
+        this.ArcGISGroupTagsTextBox6.set('value', config.ArcGISGroupTags6);
+
         initOption("MyContent", this.MyContentCheckBox, this.MyContentTextBox);
+        initOption("ArcGISGroup1", this.ArcGISGroupCheckBox1, this.ArcGISGroupTextBox1);
+        initOption("ArcGISGroup2", this.ArcGISGroupCheckBox2, this.ArcGISGroupTextBox2);
+        initOption("ArcGISGroup3", this.ArcGISGroupCheckBox3, this.ArcGISGroupTextBox3);
+        initOption("ArcGISGroup4", this.ArcGISGroupCheckBox4, this.ArcGISGroupTextBox4);
+        initOption("ArcGISGroup5", this.ArcGISGroupCheckBox5, this.ArcGISGroupTextBox5);
+        initOption("ArcGISGroup6", this.ArcGISGroupCheckBox6, this.ArcGISGroupTextBox6);
         initOption("MyOrganization", this.MyOrganizationCheckBox, this.MyOrganizationTextBox);
         initOption("ArcGISOnline", this.ArcGISOnlineCheckBox, this.ArcGISOnlineTextBox);
-        // initOption("FromUrl", this.FromUrlCheckBox);
 
+        // Load in to default selection drop down
+        for (var option in options) {
+            if (options[option].allow == true) {
+                var option = {
+                    value: option,
+                    label: option.replace(/([A-Z]+)/g, " $1").replace(/([A-Z][a-z])/g, " $1").replace("Arc GIS","ArcGIS")
+                };
+                this.defaultDropdownSelect.addOption(option);
+            }
+        }
+
+        // Set the default selection
+        this.defaultDropdownSelect.set('value', config.defaultOption);
       }
 
     });

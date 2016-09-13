@@ -57,7 +57,7 @@ define(["dojo/_base/declare",
         this.search();
       },
 
-      searchButtonClicked: function() {
+      searchButtonClicked: function () {
         this.search();
       },
 

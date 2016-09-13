@@ -31,30 +31,45 @@ define(["dojo/_base/declare",
       sortField: null,
       sortOrder: null,
 
-      postCreate: function() {
+      postCreate: function () {   
         this.inherited(arguments);
         this.updateSortOrderButton();
 
         var self = this;
-        this.own(this.sortSelect.on("change", function() {
-          var v = self.sortField = self.sortSelect.get("value");
-          if (v === "") {
+
+        // Set the default select value 
+        this.sortSelect.set("value", "title");
+        var v = self.sortField = self.sortSelect.get("value");
+        if (v === "") {
             self.sortOrder = null;
-          } else if (v === "title" || v === "owner") {
+        } else if (v === "title") {
             self.sortOrder = "asc";
-          } else if (v === "avgrating" || v === "numviews" || v === "modified") {
+        } else if (v === "numviews" || v === "modified") {
             self.sortOrder = "desc";
-          }
-          self.updateSortOrderButton();
-          self.search();
+        }
+
+        this.own(this.sortSelect.on("change", function () {
+            if (this.isLoaded() == true) {
+                var v = self.sortField = self.sortSelect.get("value");
+                if (v === "") {
+                    self.sortOrder = null;
+                } else if (v === "title") {
+                    self.sortOrder = "asc";
+                } else if (v === "numviews" || v === "modified") {
+                    self.sortOrder = "desc";
+                }
+                self.updateSortOrderButton();
+                self.search();
+            }
         }));
 
         this.own(on(this.sortSelect.dropDown, "open", function(){
           var selectPopup = this.domNode.parentElement;
           if(selectPopup) {
-            domClass.add(selectPopup, "add-data-widget-popup");
+            domClass.add(selectPopup, "add-web-data-widget-popup");
           }
         }));
+        
       },
 
       sortOrderClicked: function() {
@@ -70,7 +85,7 @@ define(["dojo/_base/declare",
       },
 
       updateSortOrderButton: function() {
-        var btn = this.sortOrderBtn;
+          var btn = this.sortOrderBtn;
         if (this.sortField !== null && this.sortField.length > 0) {
           btn.style.visibility = "visible";
         } else {

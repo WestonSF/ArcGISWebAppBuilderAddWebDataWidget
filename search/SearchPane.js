@@ -190,9 +190,9 @@ define(["dojo/_base/declare",
         this.contentNode.style.bottom = this.footerNode.clientHeight + 1 + "px";
       },
 
-      search: function() {
-        var self = this,
-          task = {};
+      search: function () {
+        var self = this;
+        task = {};
         var params = this.buildQueryParams(task);
         if (params === null || params.q === null) {
           return;

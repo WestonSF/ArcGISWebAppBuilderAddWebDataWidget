@@ -1,8 +1,45 @@
 {
-  "numPerPage":30,
+  "numPerPage": 30,
+  "ArcGISGroupID1": "b36bd80e51f54ad698f9ae5f292d9ab1",
+  "ArcGISGroupTags1": "Land",
+  "ArcGISGroupID2": "",
+  "ArcGISGroupTags2": "",
+  "ArcGISGroupID3": "",
+  "ArcGISGroupTags3": "",
+  "ArcGISGroupID4": "",
+  "ArcGISGroupTags4": "",
+  "ArcGISGroupID5": "",
+  "ArcGISGroupTags5": "",
+  "ArcGISGroupID6": "",
+  "ArcGISGroupTags6": "",
+  "defaultOption": "ArcGISGroup1",
   "scopeOptions": {
     "MyContent": {
       "allow": true,
+      "label": null
+    },
+    "ArcGISGroup1": {
+      "allow": true,
+      "label": "ArcGIS Group"
+    },
+    "ArcGISGroup2": {
+      "allow": false,
+      "label": null
+    },
+    "ArcGISGroup3": {
+      "allow": false,
+      "label": null
+    },
+    "ArcGISGroup4": {
+      "allow": false,
+      "label": null
+    },
+    "ArcGISGroup5": {
+      "allow": false,
+      "label": null
+    },
+    "ArcGISGroup6": {
+      "allow": false,
       "label": null
     },
     "MyOrganization": {

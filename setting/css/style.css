@@ -1,11 +1,16 @@
-.jimu-widget-add-data-setting .row {
+.jimu-widget-add-web-data-setting .row {
 	margin-top: 20px;
 }
-.jimu-widget-add-data-setting .row .left-cell {
+.jimu-widget-add-web-data-setting .row .left-cell {
 	display: inline-block;
-	width: 240px; 
+	width: 300px; 
 }
-.jimu-widget-add-data-setting .row .numbox {
+.jimu-widget-add-web-data-setting .row .numbox {
 	width: 80px; 
 }
 
+.jimu-widget-add-web-data-setting .group-label{
+  display: inline-block;
+  margin-top: 40px;
+  font-weight: bold;
+}

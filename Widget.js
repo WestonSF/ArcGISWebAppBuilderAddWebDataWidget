@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////
+﻿///////////////////////////////////////////////////////////////////////////
 // Copyright © 2016 Esri. All Rights Reserved.
 //
 // Licensed under the Apache License Version 2.0 (the "License");
@@ -29,8 +29,8 @@ define(["dojo/_base/declare",
     // debugger;
     return declare([BaseWidget, _WidgetsInTemplateMixin], {
 
-      name: "AddData",
-      baseClass: "jimu-widget-add-data",
+      name: "AddWebData",
+      baseClass: "jimu-widget-add-web-data",
 
       _isOpen: false,
       _searchOnOpen: false,
@@ -47,15 +47,15 @@ define(["dojo/_base/declare",
         var self = this,
           args = arguments;
         this._getUser().then(function(user) {
-          //console.warn("AddData.user=",user);
+          //console.warn("AddWebData.user=",user);
           return self._initContext(user);
         }).then(function() {
           self.inherited(args);
           self._initListeners();
           self.resize();
-          //console.warn("AddData.startup",this);
+          //console.warn("AddWebData.startup",this);
         }).otherwise(function(error) {
-          console.warn("AddData.startup error:", error);
+          console.warn("AddWebData.startup error:", error);
           self.inherited(args);
           self.resize();
         });
@@ -64,9 +64,9 @@ define(["dojo/_base/declare",
           self.inherited(args);
           self._initListeners();
           self.resize();
-          //console.warn("AddData.startup",this);
+          //console.warn("AddWebData.startup",this);
         }).otherwise(function(error) {
-          console.warn("AddData.startup error:", error);
+          console.warn("AddWebData.startup error:", error);
           self.inherited(args);
           self.resize();
         });
@@ -92,6 +92,7 @@ define(["dojo/_base/declare",
           }
         };
         initOption("MyContent");
+        initOption("ArcGISGroup");
         initOption("MyOrganization");
         initOption("ArcGISOnline");
         initOption("FromUrl");
@@ -104,7 +105,7 @@ define(["dojo/_base/declare",
           portalUtils.getPortal(portalUrl).getUser().then(function(user) {
             dfd.resolve(user);
           }).otherwise(function(error) {
-            console.warn("AddData._getUser error:", error);
+            console.warn("AddWebData._getUser error:", error);
             dfd.resolve(null);
           });
         } else {
@@ -142,7 +143,7 @@ define(["dojo/_base/declare",
         */
         this.searchPane.searchContext = searchContext;
         this.searchPane.portal = portal;
-        //console.warn("AddData.portal",portal);
+        //console.warn("AddWebData.portal",portal);
 
         var msg = this.nls.loadError + arcgisOnlineUrl;
         var arcgisOnlineOption = this.config.scopeOptions.ArcGISOnline;

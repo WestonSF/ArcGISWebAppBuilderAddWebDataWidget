@@ -1,13 +1,13 @@
 define({
   root: ({
-    _widgetLabel: "Add Data",
+    _widgetLabel: "Add Web Data",
 
     search: {
       featureLayerTitlePattern: "{serviceName} - {layerName}",
       layerInaccessible: "The layer is inaccessible.",
       online: "ArcGIS Online",
       url: "Enter A URL",
-      loadError: "AddData, unable to load:",
+      loadError: "AddWebData, unable to load:",
       searchBox: {
         search: "Search",
         placeholder: "Search..."
@@ -18,6 +18,12 @@ define({
       scopeOptions: {
         anonymousContent: "Content",
         myContent: "My Content",
+        ArcGISGroup1: "ArcGIS Group 1",
+        ArcGISGroup2: "ArcGIS Group 2",
+        ArcGISGroup3: "ArcGIS Group 3",
+        ArcGISGroup4: "ArcGIS Group 4",
+        ArcGISGroup5: "ArcGIS Group 5",
+        ArcGISGroup6: "ArcGIS Group 6",
         myOrganization: "My Organization",
         curated: "Curated",
         ArcGISOnline: "ArcGIS Online"
@@ -109,36 +115,5 @@ define({
       },
       samplesHint: "Sample URL(s)"
     }
-  }),
-  "ar": 1,
-  "cs": 1,
-  "da": 1,
-  "de": 1,
-  "el": 1,
-  "es": 1,
-  "et": 1,
-  "fi": 1,
-  "fr": 1,
-  "he": 1,
-  "hr": 1,
-  "it": 1,
-  "ja": 1,
-  "ko": 1,
-  "lt": 1,
-  "lv": 1,
-  "nb": 1,
-  "nl": 1,
-  "pl": 1,
-  "pt-br": 1,
-  "pt-pt": 1,
-  "ro": 1,
-  "ru": 1,
-  "sr": 1,
-  "sv": 1,
-  "th": 1,
-  "tr": 1,
-  "vi": 1,
-  "zh-cn": 1,
-  "zh-hk": 1,
-  "zh-tw": 1
+  })
 });

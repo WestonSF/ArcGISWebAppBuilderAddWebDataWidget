@@ -135,7 +135,7 @@ define(["dojo/_base/declare",
         nd.innerHTML = "";
         thumbnailUrl = util.checkMixedContent(thumbnailUrl);
         var thumbnail = document.createElement("IMG");
-        thumbnail.src = thumbnailUrl || "widgets/AddData/images/placeholder_120x80.png";
+        thumbnail.src = thumbnailUrl || "widgets/AddWebData/images/placeholder_120x80.png";
         nd.appendChild(thumbnail);
       },
 

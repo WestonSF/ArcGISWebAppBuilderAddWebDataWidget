@@ -90,7 +90,7 @@ define(["dojo/_base/declare",
         this.own(on(this.typeSelect.dropDown, "open", function(){
           var selectPopup = this.domNode.parentElement;
           if(selectPopup) {
-            domClass.add(selectPopup, "add-data-widget-popup");
+            domClass.add(selectPopup, "add-web-data-widget-popup");
           }
         }));
 
