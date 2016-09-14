@@ -168,7 +168,7 @@ define(["dojo/_base/declare",
         else if (this.getConfig().defaultOption.toLowerCase() == "arcgisgroup6") {
             activeNode = this.ArcGISGroupToggle6;
         }
-        else if (this.getConfig().defaultOption.toLowerCase() == "myorganisation") {
+        else if (this.getConfig().defaultOption.toLowerCase() == "myorganization") {
             activeNode = this.MyOrganizationToggle;
         }
         else if (this.getConfig().defaultOption.toLowerCase() == "fromurl") {

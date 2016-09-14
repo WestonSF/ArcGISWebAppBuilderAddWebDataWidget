@@ -6,7 +6,8 @@
 
 ## Features
 
-* 
+* Add layers from groups in ArcGIS Online
+* Filter layers in groups by tag
 
 
 ## Requirements
