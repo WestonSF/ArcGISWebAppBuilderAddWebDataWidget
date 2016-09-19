@@ -240,6 +240,9 @@ define(["dojo/_base/declare",
           if (!esriLang.isDefined(layer.title)) {
             layer.title = item.title;
           }
+          // Set layer titles again
+          layer.title = layer.name;
+          layer._titleForLegend = layer.name;
           this.map.addLayer(layer);
         }
       },
